@@ -33,6 +33,7 @@ const SignUpForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     // verify that passwords match
     if (password !== confirmPassword) {
       alert("Password do not match");
@@ -41,7 +42,10 @@ const SignUpForm = () => {
 
     try {
       // check if user has been authenticated
-      const { user } = createAuthUserWithEmailAndPassword(email, password);
+      const { user } = await createAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
 
       await createUserDocumentFromAuth(user, { displayName });
 
