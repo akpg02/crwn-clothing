@@ -8,28 +8,28 @@ import CartItem from "../cart-item/cart-item.component";
 
 import {
   CartDropdownContainer,
-  CartItems,
   EmptyMessage,
-} from "./cart-dropdown.styles.jsx";
+  CartItems,
+} from "./cart-dropdown.styles";
 
 const CartDropdown = () => {
   const { cartItems } = useContext(CartContext);
   const navigate = useNavigate();
 
-  const gotToCheckoutHandler = () => {
+  const goToCheckoutHandler = () => {
     navigate("/checkout");
   };
 
   return (
     <CartDropdownContainer>
       <CartItems>
-        {cartItems.leng ? (
+        {cartItems.length ? (
           cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
         ) : (
           <EmptyMessage>Your cart is empty</EmptyMessage>
         )}
       </CartItems>
-      <Button onClick={gotToCheckoutHandler}>GO TO CHECKOUT</Button>
+      <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
     </CartDropdownContainer>
   );
 };
