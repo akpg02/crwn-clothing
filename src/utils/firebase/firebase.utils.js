@@ -70,11 +70,13 @@ export const getCategoriesAndDocuments = async () => {
 
   const querySnapshot = await getDocs(q);
   // returns a categoryMap
-  return querySnapshot.docs.reduce((acc, docSnapshot) => {
-    const { title, items } = docSnapshot.data();
-    acc[title.toLowerCase()] = items;
-    return acc;
-  }, {});
+  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
+
+  // .reduce((acc, docSnapshot) => {
+  // const { title, items } = docSnapshot.data();
+  // acc[title.toLowerCase()] = items;
+  // return acc;
+  // }, {});
 };
 
 export const createUserDocumentFromAuth = async (
