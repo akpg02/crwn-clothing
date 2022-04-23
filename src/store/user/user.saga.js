@@ -20,6 +20,7 @@ import {
   signOutUser,
 } from "../../utils/firebase/firebase.utils";
 
+// generator functions
 export function* getSnapshotFromUserAuth(userAuth, additionalDetails) {
   try {
     const userSnapshot = yield call(
