@@ -15,6 +15,6 @@ export const FormContainer = styled.form`
 `;
 
 export const PaymentButton = styled(Button)`
-margin-left: auto;
-margin-top: 30px;
-`
+  margin-left: auto;
+  margin-top: 30px;
+`;
