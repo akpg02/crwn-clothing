@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
 
-import { SignInContainer, ButtonContainer } from "./sign-in-form.styles.jsx";
+import { SignInContainer, ButtonContainer } from "./sign-in-form.styles";
 import {
   googleSignInStart,
   emailSignInStart,
