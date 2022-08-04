@@ -15,6 +15,8 @@ import { store, persistor } from "./store/store";
 import { stripePromise } from "./utils/stripe/sripe.utils";
 import "./index.scss";
 
+import * as serviceWorker from "./service-worker";
+
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
@@ -42,3 +44,5 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+serviceWorker.register();
